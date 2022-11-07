@@ -1,0 +1,28 @@
+print("Стоимость билетов:\n"
+      "Если посетителю конференции менее 18 лет, то он проходит на конференцию бесплатно.\n"
+      "От 18 до 25 лет — 990 руб.\n"
+      "От 25 лет — полная стоимость 1390 руб.\n"
+      "При оформлении от четырех и более билетов, вы получаете скидку 10%!")
+number_of_tickets = int(input("Какое количетво билетов вы желаете приобрести?\n"))
+age_of_visitors = []
+a = 1
+price_of_tickets = 0
+for age in range(number_of_tickets):
+    while age <= number_of_tickets:
+        print("Введите возраст", a, "-го посетителя : ")
+        age = int(input())
+        age_of_visitors.append(age)
+        a += 1
+
+for i in range(number_of_tickets):
+    if age_of_visitors[i] < 18:
+        price_of_tickets += 0
+    elif 18 <= age_of_visitors[i] < 25:
+        price_of_tickets += 990
+    else:
+        price_of_tickets += 1390
+
+if number_of_tickets <= 3:
+    print("Сумма к оплате -", price_of_tickets)
+else:
+    print("Поздравляем, вы получили скидку 10% на ваш заказ!\nСумма к оплате - ", price_of_tickets * 0.9)
